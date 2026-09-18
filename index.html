@@ -1,0 +1,1981 @@
+<div id="fc365">
+
+  <div class="fc-top">
+    <div class="fc-cookie-icon">🥠</div>
+    <h1>CRACK YOUR FORTUNE</h1>
+    <p>Break today's fortune cookie and discover your daily luck!</p>
+  </div>
+
+  <div id="fc-cookie-stage">
+
+    <div id="fc-sparkles"></div>
+
+    <div id="fc-cookie" onclick="FC365.crack()">
+
+      <div class="fc-half fc-left"></div>
+      <div class="fc-half fc-right"></div>
+
+      <div class="fc-fold"></div>
+
+      <div class="fc-paper">
+        <span>YOUR<br />FORTUNE</span>
+      </div>
+
+    </div>
+
+    <div id="fc-tap">
+      👆 TAP TO CRACK YOUR COOKIE
+    </div>
+
+  </div>
+
+
+  <div id="fc-result">
+
+    <div class="fc-today-label">
+      ✨ YOUR DAILY FORTUNE ✨
+    </div>
+
+    <div id="fc-date"></div>
+
+
+    <div class="fc-main-card">
+
+      <div class="fc-big-icon">🔮</div>
+
+      <div class="fc-section-title">
+        TODAY'S FORTUNE
+      </div>
+
+      <div id="fc-fortune"></div>
+
+    </div>
+
+
+    <div class="fc-grid">
+
+      <div class="fc-info">
+        <div class="fc-info-icon">❤️</div>
+        <div class="fc-info-title">LOVE</div>
+        <div id="fc-love"></div>
+      </div>
+
+      <div class="fc-info">
+        <div class="fc-info-icon">💰</div>
+        <div class="fc-info-title">MONEY</div>
+        <div id="fc-money"></div>
+      </div>
+
+      <div class="fc-info">
+        <div class="fc-info-icon">💼</div>
+        <div class="fc-info-title">CAREER</div>
+        <div id="fc-career"></div>
+      </div>
+
+      <div class="fc-info">
+        <div class="fc-info-icon">👥</div>
+        <div class="fc-info-title">FRIENDSHIP</div>
+        <div id="fc-friendship"></div>
+      </div>
+
+      <div class="fc-info">
+        <div class="fc-info-icon">✈️</div>
+        <div class="fc-info-title">TRAVEL</div>
+        <div id="fc-travel"></div>
+      </div>
+
+      <div class="fc-info">
+        <div class="fc-info-icon">🎨</div>
+        <div class="fc-info-title">LUCKY COLOR</div>
+        <div id="fc-color"></div>
+      </div>
+
+      <div class="fc-info">
+        <div class="fc-info-icon">🔢</div>
+        <div class="fc-info-title">LUCKY NUMBER</div>
+        <div id="fc-number"></div>
+      </div>
+
+      <div class="fc-info">
+        <div class="fc-info-icon">⏰</div>
+        <div class="fc-info-title">LUCKY TIME</div>
+        <div id="fc-time"></div>
+      </div>
+
+    </div>
+
+
+    <div class="fc-special">
+
+      <div class="fc-special-icon">🍀</div>
+
+      <div>
+        <div class="fc-special-title">
+          LUCKY SNACK
+        </div>
+
+        <div id="fc-snack"></div>
+      </div>
+
+    </div>
+
+
+    <div class="fc-special">
+
+      <div class="fc-special-icon">🧭</div>
+
+      <div>
+        <div class="fc-special-title">
+          LUCKY DIRECTION
+        </div>
+
+        <div id="fc-direction"></div>
+      </div>
+
+    </div>
+
+
+    <div class="fc-special avoid">
+
+      <div class="fc-special-icon">⚠️</div>
+
+      <div>
+        <div class="fc-special-title">
+          WHAT TO AVOID TODAY
+        </div>
+
+        <div id="fc-avoid"></div>
+      </div>
+
+    </div>
+
+
+    <div class="fc-action">
+
+      <div class="fc-action-icon">
+        🎯
+      </div>
+
+      <div>
+
+        <div class="fc-action-title">
+          TODAY'S MISSION
+        </div>
+
+        <div id="fc-action"></div>
+
+      </div>
+
+    </div>
+
+
+    <div class="fc-snack-fortune">
+
+      🥠 <strong>SNACK FORTUNE:</strong>
+
+      <span id="fc-snack-fortune"></span>
+
+    </div>
+
+
+    <div class="fc-positive">
+
+      ✨ <span id="fc-positive"></span>
+
+    </div>
+
+
+    <div class="fc-note">
+      Fortune Cookie of the Day • For entertainment and good vibes only ✨
+    </div>
+
+
+    <button class="fc-share" onclick="FC365.share()">
+      📤 SHARE MY FORTUNE
+    </button>
+
+    <button class="fc-tomorrow" onclick="location.reload()">
+      🥠 COME BACK TOMORROW
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<style>
+
+/* ==============================
+   MAIN CONTAINER
+============================== */
+
+#fc365 {
+
+  max-width:720px;
+
+  margin:35px auto;
+
+  padding:30px 22px;
+
+  box-sizing:border-box;
+
+  background:
+  linear-gradient(
+    145deg,
+    #fffdf7,
+    #fff1d2
+  );
+
+  border-radius:30px;
+
+  box-shadow:
+  0 18px 55px rgba(0,0,0,.14);
+
+  font-family:
+  Arial,
+  Helvetica,
+  sans-serif;
+
+  color:#513126;
+
+  text-align:center;
+
+  overflow:hidden;
+
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.fc-cookie-icon {
+
+  font-size:60px;
+
+  animation:
+  fcFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes fcFloat {
+
+  0%,100% {
+    transform:translateY(0);
+  }
+
+  50% {
+    transform:translateY(-9px);
+  }
+
+}
+
+#fc365 h1 {
+
+  margin:5px 0;
+
+  font-size:30px;
+
+  font-weight:900;
+
+  color:#a9361b;
+
+}
+
+.fc-top p {
+
+  margin:8px auto 20px;
+
+  max-width:500px;
+
+  line-height:1.5;
+
+  color:#795b4d;
+
+}
+
+
+/* ==============================
+   COOKIE STAGE
+============================== */
+
+#fc-cookie-stage {
+
+  min-height:330px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-direction:column;
+
+  position:relative;
+
+}
+
+
+/* ==============================
+   COOKIE
+============================== */
+
+#fc-cookie {
+
+  position:relative;
+
+  width:245px;
+
+  height:175px;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+  filter:
+  drop-shadow(
+    0 18px 13px
+    rgba(0,0,0,.2)
+  );
+
+  z-index:5;
+
+}
+
+#fc-cookie:hover {
+
+  transform:
+  scale(1.06)
+  rotate(-2deg);
+
+}
+
+
+/* COOKIE HALVES */
+
+.fc-half {
+
+  position:absolute;
+
+  top:10px;
+
+  width:128px;
+
+  height:158px;
+
+  background:
+
+  radial-gradient(
+    circle at 35% 25%,
+    #ffe28d,
+    #f2bd5b 45%,
+    #d78322
+  );
+
+  border:
+  5px solid #c6731d;
+
+  box-sizing:border-box;
+
+}
+
+
+/* LEFT */
+
+.fc-left {
+
+  left:5px;
+
+  border-radius:
+  90% 25% 75% 35%;
+
+  transform:
+  rotate(17deg);
+
+  transition:
+  1s ease;
+
+}
+
+
+/* RIGHT */
+
+.fc-right {
+
+  right:5px;
+
+  border-radius:
+  25% 90% 35% 75%;
+
+  transform:
+  rotate(-17deg);
+
+  transition:
+  1s ease;
+
+}
+
+
+/* CENTER */
+
+.fc-fold {
+
+  position:absolute;
+
+  left:87px;
+
+  top:52px;
+
+  width:72px;
+
+  height:80px;
+
+  background:
+  linear-gradient(
+    145deg,
+    #f8ca6a,
+    #dc8b29
+  );
+
+  border-radius:50%;
+
+  z-index:3;
+
+  transition:.7s;
+
+}
+
+
+/* PAPER */
+
+.fc-paper {
+
+  position:absolute;
+
+  left:98px;
+
+  top:62px;
+
+  width:52px;
+
+  height:88px;
+
+  background:#fffdf1;
+
+  border:
+  2px solid #d5c28e;
+
+  box-shadow:
+  0 4px 10px rgba(0,0,0,.15);
+
+  z-index:2;
+
+  opacity:0;
+
+  transform:
+  translateY(20px)
+  scaleY(.2);
+
+  transition:
+  1s ease .2s;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:8px;
+
+  font-weight:bold;
+
+  color:#a9361b;
+
+}
+
+
+/* CRACK ANIMATION */
+
+#fc-cookie.cracked .fc-left {
+
+  transform:
+  translateX(-115px)
+  translateY(10px)
+  rotate(-40deg);
+
+}
+
+#fc-cookie.cracked .fc-right {
+
+  transform:
+  translateX(115px)
+  translateY(10px)
+  rotate(40deg);
+
+}
+
+#fc-cookie.cracked .fc-fold {
+
+  transform:
+  scale(.1);
+
+  opacity:0;
+
+}
+
+#fc-cookie.cracked .fc-paper {
+
+  opacity:1;
+
+  transform:
+  translateY(-100px)
+  scaleY(1);
+
+}
+
+
+/* TAP */
+
+#fc-tap {
+
+  margin-top:25px;
+
+  color:#b44922;
+
+  font-weight:bold;
+
+  font-size:14px;
+
+  animation:
+  fcPulse 1.5s infinite;
+
+}
+
+@keyframes fcPulse {
+
+  50% {
+    opacity:.4;
+  }
+
+}
+
+
+/* ==============================
+   SPARKLES
+============================== */
+
+.fc-sparkle {
+
+  position:absolute;
+
+  font-size:22px;
+
+  pointer-events:none;
+
+  animation:
+  fcSparkle 1.5s forwards;
+
+}
+
+@keyframes fcSparkle {
+
+  from {
+
+    opacity:1;
+
+    transform:
+    translate(0,0)
+    scale:.4;
+
+  }
+
+  to {
+
+    opacity:0;
+
+    transform:
+    translate(
+      var(--x),
+      var(--y)
+    )
+    scale(1.6);
+
+  }
+
+}
+
+
+/* ==============================
+   RESULT
+============================== */
+
+#fc-result {
+
+  display:none;
+
+  animation:
+  fcAppear .8s ease;
+
+}
+
+@keyframes fcAppear {
+
+  from {
+
+    opacity:0;
+
+    transform:
+    translateY(25px);
+
+  }
+
+  to {
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+
+.fc-today-label {
+
+  color:#ae3b1c;
+
+  font-size:14px;
+
+  font-weight:bold;
+
+  letter-spacing:1px;
+
+}
+
+#fc-date {
+
+  margin-top:6px;
+
+  color:#927365;
+
+  font-size:13px;
+
+}
+
+
+/* ==============================
+   MAIN FORTUNE
+============================== */
+
+.fc-main-card {
+
+  margin-top:18px;
+
+  padding:25px 18px;
+
+  background:#fff;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 6px 20px rgba(0,0,0,.07);
+
+}
+
+.fc-big-icon {
+
+  font-size:43px;
+
+}
+
+.fc-section-title {
+
+  margin-top:5px;
+
+  font-size:12px;
+
+  color:#ad3a1c;
+
+  font-weight:bold;
+
+  letter-spacing:1px;
+
+}
+
+#fc-fortune {
+
+  margin-top:12px;
+
+  font-size:21px;
+
+  line-height:1.5;
+
+  font-weight:bold;
+
+}
+
+
+/* ==============================
+   GRID
+============================== */
+
+.fc-grid {
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:12px;
+
+  margin-top:14px;
+
+}
+
+.fc-info {
+
+  background:#fff;
+
+  border-radius:17px;
+
+  padding:17px 12px;
+
+  box-shadow:
+  0 4px 13px rgba(0,0,0,.06);
+
+}
+
+.fc-info-icon {
+
+  font-size:27px;
+
+}
+
+.fc-info-title {
+
+  margin-top:5px;
+
+  color:#947264;
+
+  font-size:10px;
+
+  font-weight:bold;
+
+  letter-spacing:.5px;
+
+}
+
+.fc-info > div:last-child {
+
+  margin-top:7px;
+
+  font-size:14px;
+
+  font-weight:bold;
+
+  line-height:1.4;
+
+}
+
+
+/* ==============================
+   SPECIAL CARDS
+============================== */
+
+.fc-special {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  text-align:left;
+
+  margin-top:13px;
+
+  padding:17px;
+
+  border-radius:17px;
+
+  background:#fff;
+
+  box-shadow:
+  0 4px 13px rgba(0,0,0,.06);
+
+}
+
+.fc-special-icon {
+
+  font-size:35px;
+
+}
+
+.fc-special-title {
+
+  color:#ad3a1c;
+
+  font-size:11px;
+
+  font-weight:bold;
+
+}
+
+.fc-special div:last-child {
+
+  margin-top:4px;
+
+  font-size:15px;
+
+  line-height:1.45;
+
+  font-weight:bold;
+
+}
+
+
+/* AVOID */
+
+.fc-special.avoid {
+
+  background:#fff7ef;
+
+}
+
+
+/* ==============================
+   ACTION
+============================== */
+
+.fc-action {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  text-align:left;
+
+  margin-top:13px;
+
+  padding:19px;
+
+  border-radius:17px;
+
+  background:#fff;
+
+  box-shadow:
+  0 4px 13px rgba(0,0,0,.06);
+
+}
+
+.fc-action-icon {
+
+  font-size:38px;
+
+}
+
+.fc-action-title {
+
+  font-size:11px;
+
+  font-weight:bold;
+
+  color:#ad3a1c;
+
+}
+
+#fc-action {
+
+  margin-top:5px;
+
+  font-size:15px;
+
+  line-height:1.45;
+
+}
+
+
+/* ==============================
+   SNACK FORTUNE
+============================== */
+
+.fc-snack-fortune {
+
+  margin-top:14px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  background:#fff7dc;
+
+  font-size:14px;
+
+  line-height:1.5;
+
+}
+
+.fc-snack-fortune strong {
+
+  color:#a9361b;
+
+}
+
+
+/* ==============================
+   POSITIVE MESSAGE
+============================== */
+
+.fc-positive {
+
+  margin-top:14px;
+
+  padding:17px;
+
+  background:#f8f1ff;
+
+  border-radius:16px;
+
+  font-size:15px;
+
+  line-height:1.5;
+
+  font-weight:bold;
+
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.fc-share,
+.fc-tomorrow {
+
+  border:0;
+
+  border-radius:25px;
+
+  padding:12px 20px;
+
+  margin-top:15px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  font-size:13px;
+
+}
+
+.fc-share {
+
+  background:#d98722;
+
+  color:white;
+
+}
+
+.fc-tomorrow {
+
+  background:#a9361b;
+
+  color:white;
+
+  margin-left:5px;
+
+}
+
+.fc-note {
+
+  margin-top:18px;
+
+  font-size:11px;
+
+  color:#927365;
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media(max-width:520px) {
+
+  #fc365 {
+
+    margin:15px 6px;
+
+    padding:23px 13px;
+
+    border-radius:23px;
+
+  }
+
+  #fc365 h1 {
+
+    font-size:23px;
+
+  }
+
+  .fc-grid {
+
+    grid-template-columns:
+    1fr 1fr;
+
+  }
+
+  #fc-fortune {
+
+    font-size:18px;
+
+  }
+
+  .fc-share,
+  .fc-tomorrow {
+
+    display:block;
+
+    width:100%;
+
+    margin-left:0;
+
+  }
+
+}
+
+</style>
+
+
+
+<script>
+
+const FC365 = (function(){
+
+/* =========================================
+   365-DAY FORTUNE SYSTEM
+
+   The combinations below create hundreds
+   of unique daily results.
+========================================= */
+
+
+/* MAIN FORTUNES */
+
+const fortunes = [
+
+"Today brings a small opportunity that could become something much bigger.",
+
+"Something you've been waiting for may finally begin moving forward.",
+
+"A pleasant surprise may arrive when you least expect it.",
+
+"Trust your instincts today. Your first good idea may be your best one.",
+
+"Your patience is about to reward you in an unexpected way.",
+
+"A new beginning is closer than you think. Make room for something different.",
+
+"Someone's kindness today may remind you that you're on the right path.",
+
+"Your confidence will attract positive attention and new opportunities.",
+
+"An ordinary moment today could become a memory you'll treasure.",
+
+"Good news may come from a place you weren't expecting.",
+
+"Today is perfect for taking one small step toward a larger dream.",
+
+"Your positive attitude will open a door that hesitation might have closed.",
+
+"A conversation today could give you a fresh perspective.",
+
+"Something you've been worrying about may turn out better than expected.",
+
+"Your creativity is especially strong today. Follow the idea that excites you.",
+
+"Today favors people who are willing to try something new.",
+
+"A simple decision today could make tomorrow much easier.",
+
+"Look closely at the little opportunities around you. One may be important.",
+
+"Your determination is stronger than the obstacle in front of you.",
+
+"A lucky coincidence may put you exactly where you need to be.",
+
+"Someone may notice your effort even if they haven't said so yet.",
+
+"Today is a good day to stop doubting yourself and start moving forward.",
+
+"An unexpected invitation could lead to an enjoyable experience.",
+
+"Your best luck today comes from being open-minded.",
+
+"A fresh idea will bring energy to something that has felt routine.",
+
+"Something small that makes you happy deserves your attention today.",
+
+"Your persistence will begin to show results.",
+
+"Today may bring a reason to smile before the day is over.",
+
+"The right opportunity often arrives disguised as an ordinary moment.",
+
+"Take your time today. You don't need to rush something important."
+
+];
+
+
+/* LOVE */
+
+const loves = [
+
+"Be open to a meaningful conversation.",
+
+"Someone may be thinking about you more than you realize.",
+
+"Your natural charm is especially noticeable today.",
+
+"Honesty will strengthen an important connection.",
+
+"Make time for someone who makes you feel appreciated.",
+
+"A small romantic gesture could brighten someone's day.",
+
+"If you're single, stay open to meeting someone unexpected.",
+
+"If you're partnered, share something you've been keeping inside.",
+
+"Don't be afraid to show your softer side.",
+
+"Someone appreciates your kindness more than they say.",
+
+"Today favors laughter and playful conversations.",
+
+"Listen carefully. Someone may be trying to tell you something important.",
+
+"Your confidence makes you more attractive today.",
+
+"Give attention to the relationship that brings you peace.",
+
+"A thoughtful message could make someone's day.",
+
+"Let go of an old disappointment and make room for something new.",
+
+"Love grows when people feel heard. Listen before responding.",
+
+"Your warmth will draw positive people toward you."
+
+];
+
+
+/* MONEY */
+
+const money = [
+
+"Keep spending practical today and your future self will thank you.",
+
+"A small saving today could become a useful habit.",
+
+"Look for value rather than simply choosing the cheapest option.",
+
+"An opportunity to improve your finances may appear through your routine.",
+
+"Today favors planning rather than impulsive purchases.",
+
+"Be patient. Financial progress doesn't always happen overnight.",
+
+"Review one expense you could reduce.",
+
+"A creative idea may help you save or earn money.",
+
+"Don't let excitement make your financial decisions for you.",
+
+"Your best financial move today is a thoughtful one.",
+
+"An old skill may have new financial value.",
+
+"Keep your priorities clear before spending.",
+
+"A small opportunity deserves closer attention.",
+
+"Today is better for building than gambling on quick results.",
+
+"Something you already own may save you from buying something new."
+
+];
+
+
+/* CAREER */
+
+const careers = [
+
+"Finish one important task before starting another.",
+
+"Your effort may be noticed by someone important.",
+
+"Speak confidently when sharing your ideas.",
+
+"Today is excellent for organizing your priorities.",
+
+"An unexpected opportunity may appear through your work.",
+
+"Don't underestimate the value of learning something new.",
+
+"Your persistence will make a difficult task easier.",
+
+"Someone may ask for your help because they trust your ability.",
+
+"Take initiative instead of waiting for the perfect moment.",
+
+"A small improvement to your routine could increase productivity.",
+
+"Your creativity can solve a problem that logic alone cannot.",
+
+"Stay focused on progress rather than perfection.",
+
+"Today rewards preparation.",
+
+"A conversation with a coworker may inspire a useful idea.",
+
+"One completed goal is better than ten unfinished plans."
+
+];
+
+
+/* FRIENDSHIP */
+
+const friendships = [
+
+"Reach out to someone you haven't spoken to recently.",
+
+"A friend may need your encouragement today.",
+
+"Your sense of humor will brighten someone's mood.",
+
+"An honest conversation can strengthen a friendship.",
+
+"Accept an invitation if it feels positive and comfortable.",
+
+"Someone new may become an interesting friend.",
+
+"Don't forget to appreciate the people who support you.",
+
+"Today is a good day to forgive a small misunderstanding.",
+
+"Share good news with someone who will celebrate with you.",
+
+"A simple message could reconnect you with an old friend.",
+
+"Your kindness may have a bigger effect than you realize.",
+
+"Surround yourself with people who leave you feeling energized."
+
+];
+
+
+/* TRAVEL */
+
+const travels = [
+
+"Take a different route today if you have the chance.",
+
+"A spontaneous outing could be surprisingly enjoyable.",
+
+"Explore somewhere you've never visited.",
+
+"Your next adventure may begin with a simple plan.",
+
+"Keep your eyes open for an interesting place nearby.",
+
+"Travel luck favors flexibility today.",
+
+"A short trip may refresh your mind.",
+
+"Try something local that you've never tasted before.",
+
+"An unexpected destination could become a favorite.",
+
+"Make a memory instead of rushing through the day.",
+
+"Today is perfect for planning a future getaway.",
+
+"Adventure doesn't always require going far."
+
+];
+
+
+/* COLORS */
+
+const colors = [
+
+"Golden Yellow",
+"Sky Blue",
+"Emerald Green",
+"Coral Pink",
+"Lavender",
+"Mint Green",
+"Sunset Orange",
+"Ruby Red",
+"Turquoise",
+"Peach",
+"Rose Gold",
+"Soft Purple",
+"Butter Yellow",
+"Ocean Blue",
+"Fresh Green",
+"Warm Ivory",
+"Blush Pink",
+"Sunny Orange",
+"Silver",
+"Deep Teal"
+
+];
+
+
+/* TIMES */
+
+const times = [
+
+"7:00 AM",
+"8:15 AM",
+"9:30 AM",
+"10:45 AM",
+"11:30 AM",
+"12:15 PM",
+"1:00 PM",
+"2:30 PM",
+"3:15 PM",
+"4:45 PM",
+"5:30 PM",
+"6:15 PM",
+"7:00 PM",
+"8:30 PM",
+"9:15 PM"
+
+];
+
+
+/* DIRECTIONS */
+
+const directions = [
+
+"North",
+"Northeast",
+"East",
+"Southeast",
+"South",
+"Southwest",
+"West",
+"Northwest"
+
+];
+
+
+/* SNACKS */
+
+const snacks = [
+
+"Chocolate cookies",
+
+"Cheese crackers",
+
+"Potato chips",
+
+"Caramel popcorn",
+
+"Fruit gummies",
+
+"Chocolate candy",
+
+"Mini pretzels",
+
+"Peanut butter crackers",
+
+"Granola bars",
+
+"Chocolate wafers",
+
+"Cheese snacks",
+
+"Sweet-and-salty trail mix",
+
+"Fruit snacks",
+
+"Vanilla cookies",
+
+"Crunchy corn snacks",
+
+"Marshmallow treats",
+
+"Chocolate-covered treats",
+
+"Butter crackers",
+
+"Mini cookies",
+
+"Caramel treats"
+
+];
+
+
+/* AVOID */
+
+const avoid = [
+
+"rushing into a decision",
+
+"unnecessary arguments",
+
+"impulse purchases",
+
+"negative self-talk",
+
+"comparing yourself with others",
+
+"putting off something important",
+
+"overthinking a simple decision",
+
+"spending energy on things you cannot control",
+
+"ignoring your instincts",
+
+"taking on too many things at once",
+
+"letting a small problem ruin your entire day",
+
+"forgetting to enjoy the present moment"
+
+];
+
+
+/* ACTIONS */
+
+const actions = [
+
+"Do one thing you've been putting off.",
+
+"Send a kind message to someone.",
+
+"Try something you've never tried before.",
+
+"Take a short walk and clear your mind.",
+
+"Write down one goal and take the first step.",
+
+"Treat yourself to your favorite snack.",
+
+"Organize one small part of your day.",
+
+"Compliment someone sincerely.",
+
+"Learn something new for 15 minutes.",
+
+"Take a break and enjoy a quiet moment.",
+
+"Finish one task before checking your phone.",
+
+"Do something that makes you genuinely smile.",
+
+"Make plans for something you've been looking forward to.",
+
+"Share a little kindness without expecting anything back.",
+
+"Give yourself permission to slow down."
+
+];
+
+
+/* POSITIVE MESSAGES */
+
+const positives = [
+
+"You are closer than you think.",
+
+"Small progress is still progress.",
+
+"Your effort matters.",
+
+"Good things can begin with very small steps.",
+
+"You don't need to have everything figured out today.",
+
+"Your future is built one choice at a time.",
+
+"Today is another chance to create something good.",
+
+"Trust yourself a little more.",
+
+"You have handled difficult days before.",
+
+"Let yourself enjoy the good moments.",
+
+"Your kindness is never wasted.",
+
+"Keep going. Your story is still being written.",
+
+"A positive change can start today.",
+
+"Your best days aren't necessarily behind you.",
+
+"Give yourself credit for how far you've come."
+
+];
+
+
+/* =========================================
+   DATE CALCULATION
+========================================= */
+
+function dayOfYear(date){
+
+  const start =
+    new Date(
+      date.getFullYear(),
+      0,
+      0
+    );
+
+  const diff =
+    date - start;
+
+  return Math.floor(
+    diff /
+    86400000
+  );
+
+}
+
+
+/* =========================================
+   DAILY INDEX
+
+   Every date receives a deterministic
+   number from 0–364.
+========================================= */
+
+function getDay(){
+
+  const today = new Date();
+
+  const year =
+    today.getFullYear();
+
+  const day =
+    dayOfYear(today);
+
+  /*
+    The multiplication creates a
+    different distribution throughout
+    the year.
+  */
+
+  return (
+    (day * 137 +
+     year * 17)
+    % 365
+  );
+
+}
+
+
+/* =========================================
+   PICK ITEM
+
+   Different categories use different
+   offsets, preventing them from all
+   changing in the same pattern.
+========================================= */
+
+function pick(array,offset){
+
+  const day =
+    getDay();
+
+  return array[
+    (day + offset)
+    % array.length
+  ];
+
+}
+
+
+/* =========================================
+   CRACK SOUND
+========================================= */
+
+function crackSound(){
+
+  try {
+
+    const AudioContext =
+      window.AudioContext ||
+      window.webkitAudioContext;
+
+    const ctx =
+      new AudioContext();
+
+    const osc =
+      ctx.createOscillator();
+
+    const gain =
+      ctx.createGain();
+
+    osc.type="triangle";
+
+    osc.frequency.setValueAtTime(
+      180,
+      ctx.currentTime
+    );
+
+    osc.frequency.exponentialRampToValueAtTime(
+      50,
+      ctx.currentTime + .16
+    );
+
+    gain.gain.setValueAtTime(
+      .18,
+      ctx.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+      .001,
+      ctx.currentTime + .18
+    );
+
+    osc.connect(gain);
+
+    gain.connect(
+      ctx.destination
+    );
+
+    osc.start();
+
+    osc.stop(
+      ctx.currentTime + .18
+    );
+
+  } catch(e){}
+
+}
+
+
+/* =========================================
+   SPARKLES
+========================================= */
+
+function sparkles(){
+
+  const area =
+    document.getElementById(
+      "fc-sparkles"
+    );
+
+  const symbols =
+    [
+      "✨",
+      "⭐",
+      "💫",
+      "🍀",
+      "❤️",
+      "🥠"
+    ];
+
+  for(
+    let i=0;
+    i<30;
+    i++
+  ){
+
+    const s =
+      document.createElement(
+        "span"
+      );
+
+    s.className =
+      "fc-sparkle";
+
+    s.textContent =
+      symbols[
+        Math.floor(
+          Math.random() *
+          symbols.length
+        )
+      ];
+
+    s.style.left =
+      "50%";
+
+    s.style.top =
+      "45%";
+
+    s.style.setProperty(
+      "--x",
+      ((Math.random()-.5)*450)
+      + "px"
+    );
+
+    s.style.setProperty(
+      "--y",
+      ((Math.random()-.5)*300)
+      + "px"
+    );
+
+    area.appendChild(s);
+
+    setTimeout(
+      ()=>s.remove(),
+      1600
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   LOAD FORTUNE
+========================================= */
+
+function loadFortune(){
+
+  const today =
+    new Date();
+
+  document.getElementById(
+    "fc-date"
+  ).textContent =
+    today.toLocaleDateString(
+      undefined,
+      {
+        weekday:"long",
+        year:"numeric",
+        month:"long",
+        day:"numeric"
+      }
+    );
+
+
+  document.getElementById(
+    "fc-fortune"
+  ).textContent =
+    pick(fortunes,0);
+
+
+  document.getElementById(
+    "fc-love"
+  ).textContent =
+    pick(loves,3);
+
+
+  document.getElementById(
+    "fc-money"
+  ).textContent =
+    pick(money,7);
+
+
+  document.getElementById(
+    "fc-career"
+  ).textContent =
+    pick(careers,11);
+
+
+  document.getElementById(
+    "fc-friendship"
+  ).textContent =
+    pick(friendships,17);
+
+
+  document.getElementById(
+    "fc-travel"
+  ).textContent =
+    pick(travels,23);
+
+
+  document.getElementById(
+    "fc-color"
+  ).textContent =
+    pick(colors,31);
+
+
+  document.getElementById(
+    "fc-number"
+  ).textContent =
+    (
+      (
+        getDay()*7 +
+        new Date().getFullYear()
+      ) % 99
+    ) + 1;
+
+
+  document.getElementById(
+    "fc-time"
+  ).textContent =
+    pick(times,41);
+
+
+  document.getElementById(
+    "fc-snack"
+  ).textContent =
+    pick(snacks,53);
+
+
+  document.getElementById(
+    "fc-direction"
+  ).textContent =
+    pick(directions,67);
+
+
+  document.getElementById(
+    "fc-avoid"
+  ).textContent =
+    pick(avoid,79);
+
+
+  document.getElementById(
+    "fc-action"
+  ).textContent =
+    pick(actions,97);
+
+
+  document.getElementById(
+    "fc-snack-fortune"
+  ).textContent =
+    "Today is a delicious day for " +
+    pick(snacks,113).toLowerCase() +
+    ".";
+
+
+  document.getElementById(
+    "fc-positive"
+  ).textContent =
+    pick(positives,131);
+
+}
+
+
+/* =========================================
+   CRACK
+========================================= */
+
+function crack(){
+
+  const cookie =
+    document.getElementById(
+      "fc-cookie"
+    );
+
+  if(
+    cookie.classList.contains(
+      "cracked"
+    )
+  ) return;
+
+
+  cookie.classList.add(
+    "cracked"
+  );
+
+  document.getElementById(
+    "fc-tap"
+  ).style.display =
+    "none";
+
+
+  crackSound();
+
+  sparkles();
+
+
+  setTimeout(function(){
+
+    loadFortune();
+
+
+    document.getElementById(
+      "fc-cookie-stage"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "fc-result"
+    ).style.display =
+      "block";
+
+
+    document.getElementById(
+      "fc-result"
+    ).scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  },1200);
+
+}
+
+
+/* =========================================
+   SHARE
+========================================= */
+
+function share(){
+
+  const text =
+    "🥠 My Fortune Cookie says: " +
+    document.getElementById(
+      "fc-fortune"
+    ).textContent;
+
+
+  if(
+    navigator.share
+  ){
+
+    navigator.share({
+      title:
+        "My Daily Fortune",
+      text:
+        text,
+      url:
+        window.location.href
+    });
+
+  } else {
+
+    navigator.clipboard
+      .writeText(
+        text +
+        "\n\n" +
+        window.location.href
+      );
+
+    alert(
+      "✨ Your fortune was copied!"
+    );
+
+  }
+
+}
+
+
+return {
+
+  crack:crack,
+
+  share:share
+
+};
+
+})();
+
+</script>
